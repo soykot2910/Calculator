@@ -4,7 +4,8 @@ const history = document.getElementById("history-value");
 let input1 = "",
   input2 = "",
   ans = "",
-  opStr = "";
+  opStr = "",
+  cInput1 = "";
 
 function numFun(val) {
   input1 = input1 + val;
@@ -106,8 +107,10 @@ function sinFun(sp) {
       output.innerHTML = input1;
       break;
     case "neget":
-      output.innerHTML = input1 + "-";
-      input1 = -1 * parseFloat(input1);
-      console.log(input1);
+      if (input1.includes("-")) {
+      } else {
+        input1 = input1 + "-";
+        output.innerHTML = input1;
+      }
   }
 }

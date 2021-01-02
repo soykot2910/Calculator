@@ -7,8 +7,19 @@ let input1 = "",
   opStr = "";
 
 function numFun(val) {
-  input1 += val;
+  input1 = input1 + val;
+  // console.log(input1);
   output.innerHTML = input1;
+}
+
+function decFun(val) {
+  if (input1.includes(".")) {
+    output.innerHTML = input1;
+  } else {
+    cInput1 = input1;
+    input1 = input1 + val;
+    output.innerHTML = val + cInput1;
+  }
 }
 
 function opFun(op) {
@@ -57,6 +68,7 @@ function clearOneFun() {
 }
 
 function calculation(eql) {
+  console.log(input1, input2);
   switch (eql) {
     case "+":
       ans = parseFloat(input2) + parseFloat(input1);
@@ -64,7 +76,7 @@ function calculation(eql) {
     case "-":
       ans = parseFloat(input2) - parseFloat(input1);
       if (ans < 0) {
-        console.log(ans.replace("-", ""));
+        ans = String(parseFloat(input1) - parseFloat(input2)) + "-";
       }
       break;
     case "x":
@@ -94,7 +106,8 @@ function sinFun(sp) {
       output.innerHTML = input1;
       break;
     case "neget":
-      input1 = input1 + "-";
-      output.innerHTML = input1;
+      output.innerHTML = input1 + "-";
+      input1 = -1 * parseFloat(input1);
+      console.log(input1);
   }
 }

@@ -12,11 +12,17 @@ body {
   justify-content: center;
   height: 100vh;
 }
-
+.calculator-wrapper {
+  background: #3d4543;
+  border-radius: 11px;
+  padding: 20px;
+}
 .screen {
   width: 100%;
   height: 100px;
-  background: white;
+  background: #bccd95;
+  margin-bottom: 5px;
+  border: 3px solid black;
 }
 #history-value {
   color: #878a8b;
@@ -37,6 +43,9 @@ body {
 .row {
   display: flex;
 }
+sup {
+  margin-bottom: 20px;
+}
 .button {
   padding: 30px;
   background: rgb(80, 59, 59);
@@ -44,10 +53,13 @@ body {
   height: 12px;
   width: 100px;
   font-size: 1.3rem;
+  display: flex;
   font-weight: bold;
   text-align: center;
   align-items: center;
   justify-content: center;
+  border-radius: 13px;
+  margin: 8px;
 }
 .button:hover {
   cursor: pointer;
